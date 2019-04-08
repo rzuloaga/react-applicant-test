@@ -1,0 +1,8 @@
+@import './styles/colors';
+
+.app {
+  background-color: $bg-main;
+  min-height: 100vh;
+  font-size: 1.6rem;
+  font-family: 'Ubuntu', sans-serif;
+}
