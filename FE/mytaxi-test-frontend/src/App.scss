@@ -5,4 +5,10 @@
   min-height: 100vh;
   font-size: 1.6rem;
   font-family: 'Ubuntu', sans-serif;
+
+  &__wrapper {
+    max-width: 120rem;
+    padding: 2rem 1rem;
+    margin: auto;
+  }
 }
