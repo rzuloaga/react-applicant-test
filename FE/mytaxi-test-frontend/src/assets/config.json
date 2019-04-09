@@ -1,0 +1,44 @@
+
+{ 
+  "apiUrl": "http://localhost:5000/",
+  "fleetSelector": {
+    "title": "Fleet",
+    "buttons": [
+      {
+        "id": "mytaxi",
+        "name": "MyTaxi",
+        "url": "mytaxi/vehicles",
+        "headers": [
+          "id",
+          "state",
+          "type"
+        ]
+      },
+      {
+        "id": "car2go",
+        "name": "Car2go",
+        "url": "car2go/vehicles",
+        "headers": [
+          "id",
+          "name",
+          "engineType",
+          "exterior",
+          "interior",
+          "fuel",
+          "address"
+        ]
+      }
+    ]
+  },
+  "displaySelector": {
+    "title": "Display",
+    "buttons": [
+      {
+        "name": "List"
+      },
+      {
+        "name": "Map"
+      }
+    ]
+  }
+}

@@ -12,7 +12,8 @@ class Selector extends Component {
       if (this.props.selected === i) className += ' selector__button--selected';
 
       buttons.push(
-        <button className={className}
+        <button key={i}
+          className={className}
           onClick={() => this.props.onClickHandler(i)}>
           {this.props.buttons[i].name}
         </button>);

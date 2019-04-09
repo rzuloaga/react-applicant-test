@@ -2,15 +2,20 @@
 $color-black:       #000000;
 $color-white:       #FEFEFE;
 $color-white-faded: #ededed;
+$color-grey:        #b2b2b2;
 $color-yellow:      #FDEE30;
 $color-yellow-dark: #bcb000;
 
 // Backgrounds
 $bg-main: $color-white-faded;
 $bg-secondary: $color-black;
+$bg-table: $color-white;
 $bg-button: $color-yellow;
 $bg-button-selected: $color-yellow-dark;
 
 // Text
 $txt-main: $color-black;
 $txt-secondary: $color-white;
+
+// Borders
+$border-table: $color-grey;
