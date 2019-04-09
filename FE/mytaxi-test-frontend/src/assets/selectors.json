@@ -1,0 +1,20 @@
+{
+  "selectorFleetTitle": "Fleet",
+  "selectorFleetButtons": [
+    {
+      "name": "MyTaxi"
+    },
+    {
+      "name": "Car2go"
+    }
+  ],
+  "selectorDisplayTitle": "Display",
+  "selectorDisplayButtons": [
+    {
+      "name": "List"
+    },
+    {
+      "name": "Map"
+    }
+  ]
+}

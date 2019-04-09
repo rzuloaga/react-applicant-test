@@ -1,31 +1,29 @@
 import React, { Component } from 'react';
 import HeaderBar from './components/HeaderBar';
 import Selector from './components/Selector';
+import selectors from './assets/selectors.json';
 import './App.scss';
 
 class App extends Component {
-  selectorFleetTitle = 'Fleet';
-  selectorFleetButtons = [
-    {
-      name: 'All'
-    },
-    {
-      name: 'MyTaxi'
-    },
-    {
-      name: 'Car2go'
-    }
-  ];
+  constructor(props) {
+    super(props);
 
-  selectorDisplayTitle = 'Display';
-  selectorDisplayButtons = [
-    {
-      name: 'List'
-    },
-    {
-      name: 'Map'
+    this.state = {
+      buttonsClicked: Array(2).fill(0)
     }
-  ];
+  }
+
+  handleClick = (selectorIndex) => {
+
+    return (i) => {
+      let newButtonsClicked = this.state.buttonsClicked.slice();
+
+      newButtonsClicked[selectorIndex] = i;
+
+      this.setState({buttonsClicked: newButtonsClicked});
+    }
+
+  }
 
   render() {
     return (
@@ -33,9 +31,17 @@ class App extends Component {
         <HeaderBar />
 
         <div className="app__wrapper">
-          <Selector title={this.selectorFleetTitle} buttons={this.selectorFleetButtons} />
+          <Selector
+            onClickHandler={this.handleClick(0)}
+            selected={this.state.buttonsClicked[0]}
+            title={selectors.selectorFleetTitle}
+            buttons={selectors.selectorFleetButtons} />
 
-          <Selector title={this.selectorDisplayTitle} buttons={this.selectorDisplayButtons} />
+          <Selector
+            onClickHandler={this.handleClick(1)}
+            selected={this.state.buttonsClicked[1]}
+            title={selectors.selectorDisplayTitle}
+            buttons={selectors.selectorDisplayButtons} />
         </div>
       </div>
     );

@@ -3,11 +3,13 @@ $color-black:       #000000;
 $color-white:       #FEFEFE;
 $color-white-faded: #ededed;
 $color-yellow:      #FDEE30;
+$color-yellow-dark: #bcb000;
 
 // Backgrounds
 $bg-main: $color-white-faded;
 $bg-secondary: $color-black;
 $bg-button: $color-yellow;
+$bg-button-selected: $color-yellow-dark;
 
 // Text
 $txt-main: $color-black;
