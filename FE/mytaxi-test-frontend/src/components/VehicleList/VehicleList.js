@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import config from '../../assets/config.json';
+import config from '../../config.json';
 import './VehicleList.scss';
 
 class VehicleList extends Component {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import HeaderBar from './components/HeaderBar';
 import Selector from './components/Selector';
 import VehicleList from './components/VehicleList';
-import config from './assets/config.json';
+import config from './config.json';
 import './App.scss';
 
 class App extends Component {
@@ -32,17 +32,19 @@ class App extends Component {
         <HeaderBar />
 
         <div className="app__wrapper">
-          <Selector
-            onClickHandler={this.handleClick(0)}
-            selected={this.state.buttonsClicked[0]}
-            title={config.fleetSelector.title}
-            buttons={config.fleetSelector.buttons} />
+          <div className="app__selectors">
+            <Selector
+              onClickHandler={this.handleClick(0)}
+              selected={this.state.buttonsClicked[0]}
+              title={config.fleetSelector.title}
+              buttons={config.fleetSelector.buttons} />
 
-          <Selector
-            onClickHandler={this.handleClick(1)}
-            selected={this.state.buttonsClicked[1]}
-            title={config.displaySelector.title}
-            buttons={config.displaySelector.buttons} />
+            <Selector
+              onClickHandler={this.handleClick(1)}
+              selected={this.state.buttonsClicked[1]}
+              title={config.displaySelector.title}
+              buttons={config.displaySelector.buttons} />
+          </div>
 
           <VehicleList 
             key={this.state.buttonsClicked[0]}

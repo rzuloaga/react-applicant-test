@@ -11,4 +11,9 @@
     padding: 2rem 1rem;
     margin: auto;
   }
+
+  &__selectors {
+    display: flex;
+    justify-content: space-between;
+  }
 }
