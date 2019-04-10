@@ -34,10 +34,14 @@
     "title": "Display",
     "buttons": [
       {
-        "name": "List"
+        "name": "List",
+        "isList": true,
+        "isMap": false
       },
       {
-        "name": "Map"
+        "name": "Map",
+        "isList": false,
+        "isMap": true
       }
     ]
   }
