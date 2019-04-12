@@ -9,10 +9,10 @@ export class MapContainer extends Component {
         <Map
           className="map-container__map"
           google={this.props.google}
-          zoom={14}
+          zoom={12}
           initialCenter={{
-            lat: -1.2884,
-            lng: 36.8233
+            lat: 53.54,
+            lng: 10
           }}
           />
       </div>
