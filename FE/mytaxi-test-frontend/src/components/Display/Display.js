@@ -42,7 +42,10 @@ class Display extends Component {
 
     } else if (selectedDisplay.isMap) {
 
-      return <MapContainer />;
+      return <MapContainer 
+        key={this.props.selectedFleet}
+        fleetHeaders={this.state.fleetHeaders}
+        items={this.state.items}/>;
 
     }
 
