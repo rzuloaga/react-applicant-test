@@ -62,19 +62,17 @@ export class MapContainer extends Component {
     for (let i = 0; i < this.state.items.length; ++i) {
       const item = this.state.items[i];
       const itemCoordinates = item.coordinate ? item.coordinate : item.coordinates;
-      const lat = itemCoordinates[1]
-      const lng = itemCoordinates[0]
-
+      const lat = itemCoordinates[1] ? itemCoordinates[1] : itemCoordinates.latitude;
+      const lng = itemCoordinates[0] ? itemCoordinates[0] : itemCoordinates.longitude;
+console.log(lat, lng)
       markers.push(
-        <div key={item.id}>
           <Marker
             onClick={this.onMarkerClick}
+            key={this.state.items[i].id}
             id={item.id}
             position={{ lat:lat, lng: lng}}
-            lat={itemCoordinates[1]}
-            lng={itemCoordinates[0]}
             />
-          <InfoWindow
+          /* <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
             onClose={this.onClose}
@@ -83,8 +81,7 @@ export class MapContainer extends Component {
               <h4>{this.state.selectedItem.id}</h4>
               {this.renderAttributes(item)}
             </div>
-          </InfoWindow>
-        </div>
+          </InfoWindow> */
         );
     }
 
