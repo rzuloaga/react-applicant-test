@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import HeaderBar from './components/HeaderBar';
 import Selector from './components/Selector';
-import VehicleList from './components/VehicleList';
-import MapContainer from './components/MapContainer';
+import Display from './components/Display';
 import config from './config.json';
 import './App.scss';
 
@@ -13,24 +12,6 @@ class App extends Component {
     this.state = {
       buttonsClicked: Array(2).fill(0)
     }
-  }
-
-  renderDisplay = (selectedDisplayIndex) => {
-
-    const selectedDisplay = config.displaySelector.buttons[selectedDisplayIndex];
-
-    if (selectedDisplay.isList) {
-
-      return <VehicleList 
-        key={this.state.buttonsClicked[0]}
-        selectedFleet={this.state.buttonsClicked[0]}/>;
-
-    } else if (selectedDisplay.isMap) {
-
-      return <MapContainer />;
-
-    }
-
   }
 
   handleClick = (selectorIndex) => {
@@ -65,9 +46,10 @@ class App extends Component {
               buttons={config.displaySelector.buttons} />
           </div>
 
-          <div key={this.state.buttonsClicked[1]}>
-            {this.renderDisplay(this.state.buttonsClicked[1])}
-          </div>
+          <Display
+            key={this.state.buttonsClicked[0]}
+            selectedFleet={this.state.buttonsClicked[0]}
+            selectedDisplay={this.state.buttonsClicked[1]}/>
         </div>
       </div>
     );

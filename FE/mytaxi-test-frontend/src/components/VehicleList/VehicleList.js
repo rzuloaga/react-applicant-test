@@ -1,42 +1,18 @@
 import React, { Component } from 'react';
-import config from '../../config.json';
 import './VehicleList.scss';
 
 class VehicleList extends Component {
 
-  fleets;
-
-  constructor(props) {
-    super(props);
-    
-    this.fleets = config.fleetSelector.buttons;
-    
-    this.state = {
-      fleetHeaders: this.fleets[props.selectedFleet].headers,
-      items: []
-    };
-
-    this.fetchData();
-  }
-
-  fetchData = () => {
-    fetch(
-      `${config.apiUrl}${this.fleets[this.props.selectedFleet].url}`
-      )
-      .then(result => result.json())
-      .then(items => {this.setState({items: items[Object.keys(items)[0]]})})
-  }
-
   renderHeaders = () => {
     let headers = [];
 
-    for (let i = 0; i < this.state.fleetHeaders.length; ++i) {
+    for (let i = 0; i < this.props.fleetHeaders.length; ++i) {
       let className = 'vehicle-list__header';
-      let width = 100 / this.state.fleetHeaders.length;
+      let width = 100 / this.props.fleetHeaders.length;
 
       headers.push(
         <div className={className} key={i} style={{flexBasis: `${width}%`}}>
-          {this.state.fleetHeaders[i]}
+          {this.props.fleetHeaders[i]}
         </div>);
     }
 
@@ -46,13 +22,13 @@ class VehicleList extends Component {
   renderColumns = (item) => {
     let columns = [];
 
-    for (let i = 0; i < this.state.fleetHeaders.length; ++i) {
+    for (let i = 0; i < this.props.fleetHeaders.length; ++i) {
       let className = 'vehicle-list__column';
-      let width = 100 / this.state.fleetHeaders.length;
+      let width = 100 / this.props.fleetHeaders.length;
 
       columns.push(
         <div className={className} key={i} style={{flexBasis: `${width}%`}}>
-          {item[this.state.fleetHeaders[i]]}
+          {item[this.props.fleetHeaders[i]]}
         </div>);
     }
 
@@ -62,9 +38,9 @@ class VehicleList extends Component {
   renderBody = () => {
     let rows = [];
 
-    for (let i = 0; i < this.state.items.length; ++i) {
+    for (let i = 0; i < this.props.items.length; ++i) {
       let className = 'vehicle-list__item';
-      let item = this.state.items[i];
+      let item = this.props.items[i];
 
       rows.push(
         <li className={className} key={i}>
